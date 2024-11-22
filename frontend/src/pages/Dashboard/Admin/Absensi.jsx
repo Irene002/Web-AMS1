@@ -5,7 +5,7 @@ const Absensi = () => {
     const Navigate = useNavigate();
 
     return (
-        <div>
+        <div className="FadeInSection">
             <div className="flex flex-row gap-2 items-center mb-4">
                 <div className="flex flex-row gap-2 items-center opacity-50">
                     <button onClick={() => Navigate('/')}>Dashboard</button>

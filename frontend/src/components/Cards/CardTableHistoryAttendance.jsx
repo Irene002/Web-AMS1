@@ -34,7 +34,7 @@ const CardTableHistoryAttendance = ({ Date, CheckIn, CheckOut, Location }) => {
                     </div>
                     <div>
                         <h5>Notes</h5>
-                        <p>{Location}</p>
+                        <p>--:--</p>
                     </div>
                 </div>
             </div>

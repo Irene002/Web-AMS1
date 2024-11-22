@@ -25,14 +25,18 @@ const Home = () => {
         fetchHistory();
     }, []);
 
+    // Handle new check-in record
+    const handleCheckInSuccess = (newRecord) => {
+        setAttendanceHistory((prevRecords) => [...prevRecords, newRecord]);
+    };
 
     return (
-        <div>
+        <div className={`FadeInSection`}>
             <h2 className='font-bold'>Welcome <span className='GradientFont'>Sean Ishak Adare</span> ,</h2>
                 <h4>Find commonly used pages below.</h4>
             <hr className='mb-8 mt-4' />
             <div className={`flex flex-col gap-8`}>
-            <CardCheckAttendance/>
+            <CardCheckAttendance onCheckInSuccess={handleCheckInSuccess}/>
             <div className='grid xl:grid-cols-3 gap-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 '>
 
                 {CardData1.map((card,index) =>(

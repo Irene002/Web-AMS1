@@ -1,12 +1,14 @@
-const Card2 = () => {
+const Card2 = ({Title, Description, Button}) => {
     return (
-        <div className='bg-white shadow-md p-4 rounded-lg'>
-            <div className="flex flex-row justify-between">
+        <div className='bg-white shadow-md p-8 rounded-lg'>
+            <div className="flex flex-row justify-between items-center">
                 <div>
-                    <h4>The Quick Brown Fox Jumps Over The Lazy Dog.</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore libero nulla possimus. Earum et eum fugiat incidunt nesciunt odit temporibus.</p>
+                    <h4>{Title}</h4>
+                    <p>{Description}</p>
                 </div>
-                <div></div>
+                <div>
+                    {Button}
+                </div>
             </div>
         </div>
     )
