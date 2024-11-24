@@ -15,16 +15,16 @@ const LoginPage = () => {
                 <div>
                     <form className={`flex flex-col gap-8`}>
                         <div className={`flex flex-col gap-2`}>
-                            <label className={`text-white`} htmlFor="username">Username</label>
-                            <input className={`bg-white p-3 rounded-sm`} type='text' name='username' placeholder='Username'/>
+                            <label className={`text-white`} htmlFor="username">Nama Pengguna</label>
+                            <input className={`bg-white p-3 rounded-sm`} type='text' name='username' placeholder='Nama Pengguna'/>
                         </div>
 
                         <div className={`flex flex-col gap-2`}>
-                            <label className={`text-white`} htmlFor="password">Password</label>
-                            <input className={`bg-white p-3 rounded-sm`} type='password' name='passwword' placeholder='Password'/>
+                            <label className={`text-white`} htmlFor="password">Kata Sandi</label>
+                            <input className={`bg-white p-3 rounded-sm`} type='password' name='passwword' placeholder='Kata Sandi'/>
                         </div>
                         <div className={`flex justify-end w-full text-purple-500`}>
-                            <p>Lupa Password?</p>
+                            <p>Lupa Sandi?</p>
                         </div>
                         <button className='bg-purple-500 text-white p-4 rounded-lg'
                                 onClick={() => {

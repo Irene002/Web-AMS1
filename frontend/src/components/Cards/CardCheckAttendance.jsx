@@ -11,18 +11,18 @@ const CardCheckAttendance = () => {
             const response = await axios.post('http://localhost:5000/api/checkin', {
                 location: 'Infinite Learning - Gedung 2', // Example data
             });
-            console.log('Check-in successful:', response.data);
-            alert('Check-in recorded successfully!');
+            console.log('Check-in berhasil:', response.data);
+            alert('Check-in beerhasil dicatat!');
         } catch (error) {
-            console.error('Error during check-in:', error);
-            alert('Failed to record check-in.');
+            console.error('Terjadi kesalahan saat check-in:', error);
+            alert('Gagal mencatat check-in.');
         }
     };
 
     return (
         <div className={`CardAttendance shadow-md w-full p-8 rounded-md`}>
             <div>
-                <p>On Duty time - 09:00</p>
+                <p>Jam Kerja - 09:00 WIB</p>
                 <DigitalTime/>
             </div>
 
@@ -35,7 +35,7 @@ const CardCheckAttendance = () => {
 
             <Button
             Class={`my-4 border border-solid border-purple-400 before:content-[''] before:`}
-            BtnLabel={'Permit'}
+            BtnLabel={'Izin'}
             />
 
             </div>

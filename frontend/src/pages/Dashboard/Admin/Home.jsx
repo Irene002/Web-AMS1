@@ -17,7 +17,7 @@ const Home = () => {
             const response = await axios.get('http://localhost:5000/api/checkins');
             setAttendanceHistory(response.data);
         } catch (error) {
-            console.error('Error fetching attendance history:', error);
+            console.error('Terjadi kesalahan saat mengambil riwayat kehadiran', error);
         }
     };
 
@@ -32,8 +32,8 @@ const Home = () => {
 
     return (
         <div className={`FadeInSection`}>
-            <h2 className='font-bold'>Welcome <span className='GradientFont'>Sean Ishak Adare</span> ,</h2>
-                <h4>Find commonly used pages below.</h4>
+            <h2 className='font-bold'>Selamat Datang <span className='GradientFont'>Sean Ishak Adare</span> ,</h2>
+                <h4>Temukan halaman umum yang digunakan di bawah ini</h4>
             <hr className='mb-8 mt-4' />
             <div className={`flex flex-col gap-8`}>
             <CardCheckAttendance onCheckInSuccess={handleCheckInSuccess}/>
@@ -54,11 +54,11 @@ const Home = () => {
             <div className={`flex flex-col gap-4`}>
                 <div className={`flex flex-col gap-2`}>
                     <p className={`font-bold opacity-70 text-[1.2rem]`}>Riwayat Absensi</p>
-                    <p className={`text-purple-500`}>Minggu 1, 27 Oktober 2024 <span className={`text-black`}>- Automatically resets every 7 days. </span></p>
+                    <p className={`text-purple-500`}>Minggu 1, 27 Oktober 2024 <span className={`text-black`}>- Akan di reset secara otomatis setiap 7 hari. </span></p>
                 </div>
                 {attendanceHistory.length === 0 ? (
                 <div className='shadow-md p-8 w-full flex justify-center rounded-md'> 
-                    <p>No attendance record found this week.</p>
+                    <p>Tidak ditemukan catatan kehadiran minggu ini.</p>
                 </div>
             ) : (
                 attendanceHistory.map((record, index) => (
