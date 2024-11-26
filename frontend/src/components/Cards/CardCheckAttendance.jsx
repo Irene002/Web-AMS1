@@ -6,18 +6,6 @@ import axios from 'axios';
 
 const CardCheckAttendance = () => {
 
-    const handleCheckIn = async () => {
-        try {
-            const response = await axios.post('http://localhost:5000/api/checkin', {
-                location: 'Infinite Learning - Gedung 2', // Example data
-            });
-            console.log('Check-in successful:', response.data);
-            alert('Check-in recorded successfully!');
-        } catch (error) {
-            console.error('Error during check-in:', error);
-            alert('Failed to record check-in.');
-        }
-    };
 
     return (
         <div className={`CardAttendance shadow-md w-full p-8 rounded-md`}>
@@ -28,7 +16,6 @@ const CardCheckAttendance = () => {
 
             <div className={`flex flex-row items-center gap-4`}>
             <Button
-            onClick={handleCheckIn}
             Class={`my-4 bg-green-400 text-white hover:bg-green-500`}
             BtnLabel={'Check In'}
             />

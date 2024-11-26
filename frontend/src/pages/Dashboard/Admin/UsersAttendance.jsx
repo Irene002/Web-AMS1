@@ -3,7 +3,24 @@ import PageBtn from "../../../components/Button/PageBtn"
 
 import { FaMagnifyingGlass, FaSort } from "react-icons/fa6"
 
+import { getCheckins } from "../../../utils/api";
+
+import { useState, useEffect } from "react"
+
 const UsersAttendance = () => {
+
+    const [checkins, setCheckins] = useState([]);
+
+    useEffect(() => {
+        getCheckins()
+            .then((response) => {
+                setCheckins(response.data.data); // Adjust if your data structure differs
+            })
+            .catch((error) => {
+                console.error("Error fetching checkins:", error);
+            });
+    }, []);
+
     return (
         <>
             <div className="flex flex-row justify-between items-center mt-8">
@@ -25,6 +42,7 @@ const UsersAttendance = () => {
             <div>
                 <div className="TableUser flex md:overflow-x-scroll sm:overflow-x-scroll lg:overflow-x-hidden xl:overflow-hidden">
                     <TableUser />
+
                 </div>
                 <PageBtn />
             </div>
