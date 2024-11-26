@@ -9,8 +9,8 @@ const TableUser = () => {
                 <th>Jabatan</th>
                 <th>Divisi</th>
                 <th>Status</th>
-                <th>Check In</th>
-                <th>Check Out</th>
+                <th>Jam Masuk</th>
+                <th>Jam Keluar</th>
                 <th>Lokasi</th>
             </tr>
         </thead>

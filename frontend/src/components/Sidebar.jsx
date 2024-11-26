@@ -69,7 +69,7 @@ const Sidebar = () => {
                 </div>
                 </div>
             </ul>
-                <button onClick={() => Navigate('/')} className=' hover:bg-red-950 transition-all duration-200 p-4 rounded-md flex items-center gap-4 w-full'> Logout <span className='text-red-500'><FaDoorOpen/></span></button>
+                <button onClick={() => Navigate('/')} className=' hover:bg-red-950 transition-all duration-200 p-4 rounded-md flex items-center gap-4 w-full'> Keluar <span className='text-red-500'><FaDoorOpen/></span></button>
         </div>
     )
 }

@@ -10,7 +10,7 @@ const Pengguna = () => {
                     <FaChevronRight size={11} />
                 </div>
                 <div className="flex flex-row gap-2 items-center opacity-50">
-                    <p>Dashboard</p>
+                    <p>Dasbor</p>
                     <FaChevronRight size={11} />
                 </div>
                 <div>
