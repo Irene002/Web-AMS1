@@ -22,20 +22,19 @@ const CardCheckAttendance = () => {
     return (
         <div className={`CardAttendance shadow-md w-full p-8 rounded-md`}>
             <div>
-                <p>On Duty time - 09:00</p>
+                <p>Jam Kerja - 09:00 WIB</p>
                 <DigitalTime/>
             </div>
 
             <div className={`flex flex-row items-center gap-4`}>
             <Button
-            onClick={handleCheckIn}
             Class={`my-4 bg-green-400 text-white hover:bg-green-500`}
             BtnLabel={'Check In'}
             />
 
             <Button
             Class={`my-4 border border-solid border-purple-400 before:content-[''] before:`}
-            BtnLabel={'Permit'}
+            BtnLabel={'Izin'}
             />
 
             </div>

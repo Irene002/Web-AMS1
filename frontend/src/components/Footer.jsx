@@ -6,8 +6,7 @@ const Footer = () => {
                     <div>
                     <h4>Infinite Learning</h4>
                     <p className='cursor-auto select-text'>
-                        Infinite Learning, a division of PT Kinema Systrans multimedia (a subsidiary of Infinite
-                        Studios), is centered on the development of vocational training courses
+                    Infinite Learning, sebuah divisi dari PT Kinema Systrans Multimedia (Anak perusahaan Infinite Studios), berfokus pada pengembangan program pelatihan vokasi.
                     </p>
                     </div>
                     <div>
@@ -19,16 +18,16 @@ const Footer = () => {
                 </div>
                 <div className='flex flex-warp  gap-24'>
                     <div className=''>
-                        <h4>Contact us</h4>
+                        <h4>Hubungi Kami</h4>
                 </div>
                 <div className=''>
-                    <h4>Stay in touch</h4>
+                    <h4>Tetap Terhubung</h4>
                 </div>
                 </div>
             </div>
             <div></div>
             <div className="flex justify-center gap-8 py-8">
-            2024 &copy; Astaroth, All Rights Reserved
+            2024 &copy; Infinite Learning, All Rights Reserved
             </div>
         </footer>
     )

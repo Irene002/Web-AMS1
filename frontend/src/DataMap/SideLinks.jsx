@@ -3,9 +3,9 @@ import {
 } from 'react-icons/fa6'
 
 const SideLinks = [
-    {name:'Overview', path:'', iconLeft: <FaCircleQuestion/>},
+    {name:'Beranda', path:'', iconLeft: <FaCircleQuestion/>},
     {name:'Absensi', path:'Absensi', iconLeft: <FaNoteSticky/>},
-    {name:'Pengguna', path:'Pengguna', iconLeft: <FaUsers/>, iconRight:<FaChevronDown/>},
+    {name:'Pengguna', path:'Pengguna', iconLeft: <FaUsers/>},
     {name:'Pengaturan', path:'Pengaturan', iconLeft: <FaGear/>},
 
 ]
