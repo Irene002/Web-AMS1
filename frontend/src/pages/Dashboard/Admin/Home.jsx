@@ -62,18 +62,8 @@ const Home = () => {
                     <p className={`font-bold opacity-70 text-[1.2rem]`}>Riwayat Absensi</p>
                     <p className={`text-purple-500`}>Minggu 1, 27 Oktober 2024 <span className={`text-black`}>- Automatically resets every 7 days. </span></p>
                 </div>
-                {attendanceHistory.length === 0 ? (
-                <div className='shadow-md p-8 w-full flex justify-center rounded-md'> 
-                    <p>No attendance record found this week.</p>
-                </div>
-            ) : (
-                attendanceHistory.map((record, index) => (
-                    <CardTableHistoryAttendance
-                        Date={'Selasa, 20 Desember 2024'}
-                        CheckIn={''}
-                        CheckOut={'--:--'} // Placeholder for now
-                        Location={''}
-                    />
+
+                <CardTableHistoryAttendance/>
 
 
                 </div>
