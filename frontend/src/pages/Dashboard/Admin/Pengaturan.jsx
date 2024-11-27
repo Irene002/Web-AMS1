@@ -12,7 +12,7 @@ const Pengaturan = () => {
 
     return (
         <div className='FadeInSection'>
-            <h2>Pengaturan</h2>
+            <h2>Setting</h2>
             <br/>
             <div className='flex flex-col gap-8'>
                 {SettingsCard.map((card, index) => (
