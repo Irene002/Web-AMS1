@@ -2,22 +2,9 @@ import Button from '../Button/ButtonMisc.jsx'
 import {FaLocationDot} from "react-icons/fa6";
 
 import DigitalTime from '../Misc/DigitalTime.jsx'
-import axios from 'axios';
 
 const CardCheckAttendance = () => {
 
-    const handleCheckIn = async () => {
-        try {
-            const response = await axios.post('http://localhost:5000/api/checkin', {
-                location: 'Infinite Learning - Gedung 2', // Example data
-            });
-            console.log('Check-in successful:', response.data);
-            alert('Check-in recorded successfully!');
-        } catch (error) {
-            console.error('Error during check-in:', error);
-            alert('Failed to record check-in.');
-        }
-    };
 
     return (
         <div className={`CardAttendance shadow-md w-full p-8 rounded-md`}>
