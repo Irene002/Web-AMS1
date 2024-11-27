@@ -6,31 +6,11 @@ import { useEffect, useState } from 'react';
 
 
 const App = () => {
-    const [user, setUser]= useState([]);
-    const [refresh, setRefresh]= useState(false);
-
-    
-const getData = async ()=>{
-    try{
-        const result = await axios.get(`http://localhost:3015/checkins`)
-    setUser(result.data.data);
-    }catch(error){
-        console.log(error)
-    }
-}
-
-const postData = async ()=>{
-    await axios.post(`http://localhost:3015/checkins`, [name, jabatan, devisi, status, check_in, check_out, lokasi])
-    
-}
 
 
-    useEffect(()=>{
-        getData()
-    }, [refresh])
     return (
         <>
-        <table>
+        {/* <table>
             <thead>
                 <tr>
                     <th>no</th>
@@ -48,8 +28,9 @@ const postData = async ()=>{
                     </tr>
                 })}
             </tbody>
-        </table>
-        {/* <Routing/> */}
+        </table> */}
+
+        <Routing/>
 
         </>
     )

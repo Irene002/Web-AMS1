@@ -1,5 +1,5 @@
 import { FaCircleExclamation, FaChevronRight} from "react-icons/fa6"
-import { useNavigate, Outlet, } from "react-router-dom"
+import { useNavigate, Outlet} from "react-router-dom"
 
 const Absensi = () => {
     const Navigate = useNavigate();
