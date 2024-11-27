@@ -9,27 +9,6 @@ import axios from "axios"
 
 const UsersAttendance = () => {
 
-    const [user, setUser]= useState([]);
-
-    
-    const getData = async ()=>{
-        try{
-            const result = await axios.get(`http://localhost:3015/checkins`)
-        setUser(result.data.data);
-        }catch(error){
-            console.log(error)
-        }
-    }
-    
-    const postData = async ()=>{
-        await axios.post(`http://localhost:3015/checkins`, [name, jabatan, devisi, status, check_in, check_out, lokasi])
-        
-    }
-    
-        useEffect(()=>{
-            getData()
-        }, [])
-
 
     return (
         <>
@@ -51,20 +30,8 @@ const UsersAttendance = () => {
 
             <div>
                 <div className="TableUser flex md:overflow-x-scroll sm:overflow-x-scroll lg:overflow-x-hidden xl:overflow-hidden">
-                    
-                    {user.map((value, index) => (
                         <TableUser
-                        key={index}
-                        nomor={index+1}
-                        nama={value.name}
-                        jabatan={value.jabatan}
-                        divisi={value.devisi}
-                        status={value.status}
-                        jamMasuk={value.check_in}
-                        jamKeluar={value.check_out}
-                        Lokasi={value.lokasi}
                         />
-                    ))}
 
                 </div>
                 <PageBtn />

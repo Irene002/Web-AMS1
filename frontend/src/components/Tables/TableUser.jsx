@@ -1,4 +1,29 @@
-const TableUser = ({key, nomor, nama, jabatan, divisi, status, jamMasuk, jamKeluar, Lokasi}) => {
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+const TableUser = () => {
+
+    const [user, setUser]= useState([]);
+
+    
+    const getData = async ()=>{
+        try{
+            const result = await axios.get(`http://localhost:3015/checkins`)
+        setUser(result.data.data);
+        }catch(error){
+            console.log(error)
+        }
+    }
+    
+    const postData = async ()=>{
+        await axios.post(`http://localhost:3015/checkins`, [name, jabatan, devisi, status, check_in, check_out, lokasi])
+        
+    }
+    
+        useEffect(()=>{
+            getData()
+        }, [])
+
   return (
     <>
     <table className="w-full mt-8">
@@ -15,16 +40,18 @@ const TableUser = ({key, nomor, nama, jabatan, divisi, status, jamMasuk, jamKelu
             </tr>
         </thead>
         <tbody>
-            <tr key={key}>
-                <td>{nomor}</td>
-                <td>{nama}</td>
-                <td>{jabatan}</td>
-                <td>{divisi}</td>
-                <td>{status}</td>
-                <td>{jamMasuk}</td>
-                <td>{jamKeluar}</td>
-                <td>{Lokasi}</td>
+            {user.map((value, index) => (
+            <tr key={index}>
+                <td>{value.id}</td>
+                <td>{value.nama}</td>
+                <td>{value.jabatan}</td>
+                <td>{value.devisi}</td>
+                <td>{value.status}</td>
+                <td>{value.check_in}</td>
+                <td>{value.check_out}</td>
+                <td>{value.lokasi}</td>
             </tr>
+            ))}
         </tbody>
     </table>
     </>
