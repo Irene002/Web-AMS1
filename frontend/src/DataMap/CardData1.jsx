@@ -3,22 +3,22 @@ import {FaUser, FaPenToSquare, FaGear} from 'react-icons/fa6'
 const CardData1 = [
     {
         icon:<FaUser/>,
-        title:'Pengguna',
+        title:'User',
         description:'The quick brown fox jumps over the lazy dog.',
-        BtnLabel:'Lihat Pengguna',
-        path:'/Pengguna',
+        BtnLabel:'Go to User',
+        path:'/User',
     },{
         icon:<FaPenToSquare/>,
         title:'Edit Profil',
         description:'The quick brown fox jumps over the lazy dog.',
-        BtnLabel:'Lihat Profil',
+        BtnLabel:'Go to Profil',
         path:'/Profile',
     },{
         icon:<FaGear/>,
-        title:'Pengaturan',
+        title:'Setting',
         description:'The quick brown fox jumps over the lazy dog.',
-        BtnLabel:'Lihat Pengaturan',
-        path:'/Pengaturan',
+        BtnLabel:'Go to Setting',
+        path:'/Setting',
     },
 ]
 export default CardData1

@@ -8,7 +8,7 @@ const CardCheckAttendance = () => {
     return (
         <div className={`CardAttendance shadow-md w-full p-8 rounded-md`}>
             <div>
-                <p>Jam Kerja - 09:00 WIB</p>
+                <p>On Duty - 09:00 WIB</p>
                 <DigitalTime/>
             </div>
 
@@ -20,13 +20,13 @@ const CardCheckAttendance = () => {
 
             <Button
             Class={`my-4 border border-solid border-purple-400 before:content-[''] before:`}
-            BtnLabel={'Izin'}
+            BtnLabel={'Permit'}
             />
 
             </div>
             <div className={`flex flex-row gap-2 items-center`}>
                 <FaLocationDot/>
-                <p>Infinite Learning - Gedung 2</p>
+                <p>Infinite Learning </p>
             </div>
 
         </div>

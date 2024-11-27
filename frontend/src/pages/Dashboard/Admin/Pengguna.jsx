@@ -10,14 +10,14 @@ const Pengguna = () => {
                     <FaChevronRight size={11} />
                 </div>
                 <div className="flex flex-row gap-2 items-center opacity-50">
-                    <p>Dasbor</p>
+                    <p>Dashboard</p>
                     <FaChevronRight size={11} />
                 </div>
                 <div>
-                    <p className="text-purple-500">Pengguna</p>
+                    <p className="text-purple-500">User</p>
                 </div>
             </div>
-        <h2 className='font-bold'>Pengguna</h2>
+        <h2 className='font-bold'>User</h2>
         <TableUser/>        
         </div>
     )

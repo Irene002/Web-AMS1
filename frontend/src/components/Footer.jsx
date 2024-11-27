@@ -6,7 +6,7 @@ const Footer = () => {
                     <div>
                     <h4>Infinite Learning</h4>
                     <p className='cursor-auto select-text'>
-                    Infinite Learning, sebuah divisi dari PT Kinema Systrans Multimedia (Anak perusahaan Infinite Studios), berfokus pada pengembangan program pelatihan vokasi.
+                    Infinite Learning, a division of PT Kinema Systrans Multimedia (a subsidiary of Infinite Studios), specializes in developing vocational training programs.
                     </p>
                     </div>
                     <div>
@@ -18,10 +18,10 @@ const Footer = () => {
                 </div>
                 <div className='flex flex-warp  gap-24'>
                     <div className=''>
-                        <h4>Hubungi Kami</h4>
+                        <h4>Contact Us</h4>
                 </div>
                 <div className=''>
-                    <h4>Tetap Terhubung</h4>
+                    <h4>Stay in touch</h4>
                 </div>
                 </div>
             </div>
