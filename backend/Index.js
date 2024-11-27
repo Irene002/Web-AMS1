@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { testConnection } from "./Database/db.js";
 import CheckRouter from "./Routes/Checkins.js";
+import UserRouter from "./Routes/User.js";
 
 dotenv .config();
 const app = express();
@@ -10,6 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(CheckRouter);
+app.use(UserRouter);
 
 app.listen(process.env.APP_PORT, async () => {
     await testConnection();
