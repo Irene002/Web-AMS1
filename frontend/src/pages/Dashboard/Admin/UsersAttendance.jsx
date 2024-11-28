@@ -3,10 +3,6 @@ import PageBtn from "../../../components/Button/PageBtn"
 
 import { FaMagnifyingGlass, FaSort } from "react-icons/fa6"
 
-import { useState, useEffect } from "react"
-
-import axios from "axios"
-
 const UsersAttendance = () => {
 
 
