@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 
 const CardTableHistoryAttendance = ({ Date, CheckIn, CheckOut, Location }) => {
 
-    const [isActive, setIsActive] = useState(false); // State to toggle the class
+    const [isActive, setIsActive] = useState(false); 
 
     const CollapseClick = () => {
-        setIsActive(!isActive); // Toggle the state between true and false
+        setIsActive(!isActive);
     };
     
 

@@ -8,7 +8,7 @@ const Absensi = () => {
         <div className="FadeInSection">
             <div className="flex flex-row gap-2 items-center mb-4">
                 <div className="flex flex-row gap-2 items-center opacity-50">
-                    <button onClick={() => Navigate('/')}>Dasbor</button>
+                    <button onClick={() => Navigate('/Dashboard')}>Dasbor</button>
                     <FaChevronRight size={11} />
                 </div>
                 <div>

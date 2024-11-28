@@ -1,20 +1,21 @@
 import TableUser from "../../../components/Tables/TableUser"
 import { FaChevronRight } from "react-icons/fa6"
 
+import { useNavigate } from "react-router-dom"
+
 const Pengguna = () => {
+
+    const Navigate = useNavigate(); 
+
     return (
         <div className="FadeInSection">
         <div className="flex flex-row gap-2 items-center mb-4">
-                <div className="flex flex-row gap-2 items-center opacity-50">
-                    <p>AMS</p>
+                <button onClick={() => Navigate('/Dashboard')} className="flex flex-row gap-2 items-center opacity-50">
+                    <p>Dashboard</p>
                     <FaChevronRight size={11} />
-                </div>
-                <div className="flex flex-row gap-2 items-center opacity-50">
-                    <p>Dasbor</p>
-                    <FaChevronRight size={11} />
-                </div>
+                </button>
                 <div>
-                    <p className="text-purple-500">Pengguna</p>
+                    <p className="text-purple-500">Users</p>
                 </div>
             </div>
         <h2 className='font-bold'>Pengguna</h2>

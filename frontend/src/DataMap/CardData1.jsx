@@ -6,19 +6,19 @@ const CardData1 = [
         title:'Pengguna',
         description:'The quick brown fox jumps over the lazy dog.',
         BtnLabel:'Lihat Pengguna',
-        path:'/Pengguna',
+        path:'Pengguna',
     },{
         icon:<FaPenToSquare/>,
         title:'Edit Profil',
         description:'The quick brown fox jumps over the lazy dog.',
         BtnLabel:'Lihat Profil',
-        path:'/Profile',
+        path:'Profile',
     },{
         icon:<FaGear/>,
         title:'Pengaturan',
         description:'The quick brown fox jumps over the lazy dog.',
         BtnLabel:'Lihat Pengaturan',
-        path:'/Pengaturan',
+        path:'Pengaturan',
     },
 ]
 export default CardData1
