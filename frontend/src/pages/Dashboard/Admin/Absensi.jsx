@@ -8,15 +8,15 @@ const Absensi = () => {
         <div className="FadeInSection">
             <div className="flex flex-row gap-2 items-center mb-4">
                 <div className="flex flex-row gap-2 items-center opacity-50">
-                    <button onClick={() => Navigate('/Dashboard')}>Dasbor</button>
+                    <button onClick={() => Navigate('/')}>Dasbor</button>
                     <FaChevronRight size={11} />
                 </div>
                 <div>
-                    <p className="text-purple-500">Absensi</p>
+                    <p className="text-purple-500">Attendance</p>
                 </div>
             </div>
 
-            <h2>Absensi</h2>
+            <h2>Attendance</h2>
 
             <div className="flex flex-row justify-between border-b border-solid border-black mt-8">
                 <div className="flex flex-row gap-12">
@@ -24,7 +24,7 @@ const Absensi = () => {
                         <p>Pengguna</p>
                     </button>
                     <button onClick={() => Navigate('Activity')} className="py-2 flex flex-row gap-3 items-center">
-                        <p className="opacity-50">Log Aktivitas</p>
+                        <p className="opacity-50">Activity Log</p>
                         <FaCircleExclamation color="red" />
                     </button>
                 </div>

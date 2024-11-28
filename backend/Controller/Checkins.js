@@ -24,7 +24,7 @@ export const addCheckins = async (req, res) => {
             check_out,
             lokasi,
         ]);
-        return res.status(200).json({msh: "Check in ditambahkan"});
+        return res.status(200).json({msg: "Check in ditambahkan"});
     }   catch (error) {
         return res.status(500).json({msg: "Terjadi kesalahan pada server" });
     }
@@ -65,3 +65,8 @@ export const deleteCheckins = async (req, res) => {
         return res.status(500).json({msg: "Terjadi kesalahan diserver"});
     }
 };
+
+
+
+
+

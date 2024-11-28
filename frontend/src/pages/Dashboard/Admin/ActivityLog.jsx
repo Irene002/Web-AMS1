@@ -1,6 +1,6 @@
 const ActivityLog = () => {
   return (
-    <div className="h-screen">Log Aktivitas</div>
+    <div className="h-screen">Activity Log</div>
   )
 }
 

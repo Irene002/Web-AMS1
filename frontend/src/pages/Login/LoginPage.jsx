@@ -11,26 +11,26 @@ const LoginPage = () => {
             </div>
             <div className="w-full flex justify-center">
             <div className={` shadow-md rounded-md max-w-[500px] min-w-[250px] w-full p-8`}>
-                <h3 className={`GradientFont flex justify-center mb-8`}>Masuk</h3>
+                <h3 className={`GradientFont flex justify-center mb-8`}>Login</h3>
                 <div>
                     <form className={`flex flex-col gap-8`}>
                         <div className={`flex flex-col gap-2`}>
-                            <label className={`text-white`} htmlFor="username">Nama Pengguna</label>
-                            <input className={`bg-white p-3 rounded-sm focus:outline-none`} type='text' name='username' placeholder='Nama Pengguna'/>
+                            <label className={`text-white`} htmlFor="username">Username</label>
+                            <input className={`bg-white p-3 rounded-sm focus:outline-none`} type='text' name='username' placeholder='Username'/>
                         </div>
 
                         <div className={`flex flex-col gap-2`}>
-                            <label className={`text-white`} htmlFor="password">Kata Sandi</label>
-                            <input className={`bg-white p-3 rounded-sm focus:outline-none`} type='password' name='passwword' placeholder='Kata Sandi'/>
+                            <label className={`text-white`} htmlFor="password">Password</label>
+                            <input className={`bg-white p-3 rounded-sm focus:outline-none`} type='password' name='passwword' placeholder='Password'/>
                         </div>
                         <div className={`flex justify-end w-full text-purple-500`}>
-                            <p>Lupa Sandi?</p>
+                            <p>Forget Password?</p>
                         </div>
                         <button className='bg-purple-500 text-white p-4 rounded-lg'
                                 onClick={() => {
                                     navigate('/Dashboard')
                                 }}>
-                            Masuk
+                            Login
                         </button>
                     </form>
                 </div>
