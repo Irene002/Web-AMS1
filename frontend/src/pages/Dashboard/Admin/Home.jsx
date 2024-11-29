@@ -3,32 +3,8 @@ import CardData1 from '../../../DataMap/CardData1.jsx'
 import CardCheckAttendance from '../../../components/Cards/CardCheckAttendance.jsx'
 import CardTableHistoryAttendance from '../../../components/Cards/CardTableHistoryAttendance.jsx'
 import CardTableList from '../../../components/Cards/CardTableList.jsx'
-import {useState, useEffect} from 'react'
-
-import axios from 'axios'
 
 const Home = () => {
-
-    const [attendanceHistory, setAttendanceHistory] = useState([]);
-
-    // Fetch attendance history
-    const fetchHistory = async () => {
-        try {
-            const response = await axios.get('http://localhost:5000/api/checkins');
-            setAttendanceHistory(response.data);
-        } catch (error) {
-            console.error('Error fetching attendance history:', error);
-        }
-    };
-
-    useEffect(() => {
-        fetchHistory();
-    }, []);
-
-    // Handle new check-in record
-    const handleCheckInSuccess = (newRecord) => {
-        setAttendanceHistory((prevRecords) => [...prevRecords, newRecord]);
-    };
 
     return (
         <div className={`FadeInSection`}>
@@ -63,7 +39,9 @@ const Home = () => {
                     <p className={`text-purple-500`}>Week 1, 27 October 2024 <span className={`text-black`}>- Automatically resets every 7 days. </span></p>
                 </div>
 
-                <CardTableHistoryAttendance/>
+                <CardTableHistoryAttendance
+                
+                />
 
 
                 </div>
