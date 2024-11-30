@@ -3,6 +3,13 @@ import axios from "axios";
 
 const TableUser = () => {
 
+    const Users = [
+        {id:'1', nama:'Sean Ishak Adare', jabatan:'Intern', devisi:'Technical Web', status:'On-site', check_in:'08:00 AM', check_out:'05:00 PM', lokasi:'Infinite Learning'},
+        {id:'2', nama:'Reggi Saputra Salawangi', jabatan:'Intern', devisi:'Technical Web', status:'On-site', check_in:'08:00 AM', check_out:'05:00 PM', lokasi:'Infinite Learning'},
+        {id:'3', nama:'Leo Richardo Alelo', jabatan:'Intern', devisi:'Technical Web', status:'On-site', check_in:'08:00 AM', check_out:'05:00 PM', lokasi:'Infinite Learning'},
+        {id:'4', nama:'Firstonly Marshel Naharia', jabatan:'Intern', devisi:'Technical Web', status:'On-site', check_in:'08:00 AM', check_out:'05:00 PM', lokasi:'Infinite Learning'},
+    ]
+
     const [user, setUser]= useState([]);
 
     
@@ -30,17 +37,17 @@ const TableUser = () => {
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Nama</th>
-                <th>Jabatan</th>
-                <th>Divisi</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Division</th>
                 <th>Status</th>
-                <th>Jam Masuk</th>
-                <th>Jam Keluar</th>
-                <th>Lokasi</th>
+                <th>Check In</th>
+                <th>Check Out</th>
+                <th>Location</th>
             </tr>
         </thead>
         <tbody>
-            {user.map((value, index) => (
+            {Users.map((value, index) => (
             <tr key={index}>
                 <td>{value.id}</td>
                 <td>{value.nama}</td>

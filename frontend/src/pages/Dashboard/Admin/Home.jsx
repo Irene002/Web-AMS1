@@ -15,7 +15,7 @@ const Home = () => {
                 <CardCheckAttendance/>
                 <div className={`flex flex-col gap-4`}>
                     <div className={`flex flex-col gap-2`}>
-                        <p className={`font-bold opacity-70 text-[1.2rem]`}> Attendance History(Users)</p>
+                        <p className={`font-bold opacity-70 text-[1.2rem]`}> Attendance History (Users)</p>
                         <p className={`text-purple-500`}>Week 1, 27 October 2024 <span className={`text-black`}>- Automatically resets every 7 days. </span></p>
                     </div>
                     <CardTableList/>

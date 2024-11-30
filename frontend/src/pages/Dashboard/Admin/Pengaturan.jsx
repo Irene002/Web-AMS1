@@ -1,4 +1,5 @@
 import Card2 from "../../../components/Cards/Card2.jsx";
+import {FaChevronRight} from 'react-icons/fa6'
 
 const Pengaturan = () => {
 
@@ -12,7 +13,16 @@ const Pengaturan = () => {
 
     return (
         <div className='FadeInSection'>
-            <h2>Setting</h2>
+             <div className="flex flex-row gap-2 items-center mb-4">
+                <div className="flex flex-row gap-2 items-center opacity-50">
+                    <button onClick={() => Navigate('/')}>Dasbor</button>
+                    <FaChevronRight size={11} />
+                </div>
+                <div>
+                    <p className="text-purple-500">Settings</p>
+                </div>
+            </div>
+            <h2>Settings</h2>
             <br/>
             <div className='flex flex-col gap-8'>
                 {SettingsCard.map((card, index) => (
