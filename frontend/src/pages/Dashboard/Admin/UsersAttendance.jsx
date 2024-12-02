@@ -1,7 +1,8 @@
 import TableUser from "../../../components/Tables/TableUser"
 import PageBtn from "../../../components/Button/PageBtn"
 
-import { FaMagnifyingGlass, FaSort } from "react-icons/fa6"
+import { FaMagnifyingGlass, FaSort, FaPlus } from "react-icons/fa6"
+import ButtonMisc from "../../../components/Button/ButtonMisc"
 
 const UsersAttendance = () => {
 
@@ -16,7 +17,17 @@ const UsersAttendance = () => {
                     <input type="text" placeholder="Cari..." className="focus:outline-none" />
                 </div>
 
-                <div>
+                <div className="flex flex-row gap-4">
+                    {/* <ButtonMisc
+                    BtnLabel={'Add Data'}
+                    Class={'bg-green-400 p-2 text-white hover:bg-green-500 duration-300 transition-all'}
+                    ></ButtonMisc> */}
+
+                    <button className="flex flex-row gap-2 bg-green-400 text-white hover:bg-green-500 duration-300 transition-all items-center p-2 rounded-md">
+                        <FaPlus/>
+                        Add Data
+                    </button>
+
                     <button className="flex flex-row gap-2 items-center p-2 border border-solid border-black rounded-md">
                         <FaSort />
                         Filter

@@ -1,10 +1,10 @@
 import Button from '../Button/ButtonMisc.jsx'
 import {FaLocationDot} from "react-icons/fa6";
+import { useState } from 'react';
 
 import DigitalTime from '../Misc/DigitalTime.jsx'
 
-const CardCheckAttendance = () => {
-
+const CardCheckAttendance = ({onclick, buttonLabel}) => {
 
 
     return (
@@ -16,13 +16,9 @@ const CardCheckAttendance = () => {
 
             <div className={`flex flex-row items-center gap-4`}>
             <Button
-            Class={`my-4 bg-green-400 text-white hover:bg-green-500`}
-            BtnLabel={'Check In'}
-            />
-
-            <Button
-            Class={`my-4 border border-solid border-purple-400 before:content-[''] before:`}
-            BtnLabel={'Permit'}
+            onClick={onclick}
+            Class={`my-4 bg-purple-500 text-white hover:bg-purple-400`}
+            BtnLabel={buttonLabel}
             />
 
             </div>

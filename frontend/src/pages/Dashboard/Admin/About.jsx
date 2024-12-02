@@ -8,28 +8,36 @@ const About = () => {
     })
 
     const handleClick = async () => {
-        const currentTime = new Date().toISOString();
-
+        const now = new Date();
+        const currentTime = `${now.getHours()}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+    
         if (buttonState.status === 'check_in') {
-            const newRow = {checkin: currentTime, checkout: null};
+            const newRow = { checkin: currentTime, checkout: null };
+            
             setData((prevData) => [...prevData, newRow]);
+    
+            await axios.post('http://localhost:3015/checkin', { check_in: currentTime });
+    
+            setButtonState({ status: 'check_out', visible: true });
 
-            await axios.post('http://localhost:3015/checkin', {checkin: currentTime});
-
-            setButtonState({status: 'check_out', visible: true});
         } else if (buttonState.status === 'check_out') {
-            const updatedData = [...data];
-            updatedData[updatedData.length - 1].checkout = currentTime;
-            setData(updatedData);
+            setData((prevData) => {
+                const updatedData = [...prevData];
+                updatedData[updatedData.length - 1].checkout = currentTime;
+                return updatedData;
+            })
+    
+            await axios.post('http://localhost:3015/checkout', { check_out: currentTime });
+    
+            setButtonState({ status: 'check_in', visible: false });
 
-            await axios.post('http://localhost:3015/checkout', {checkout: currentTime});
-
-            setButtonState({status: 'check_in', visible:false});
             setTimeout(() => {
-                setButtonState({status: 'check_in', visible: true})
+                setButtonState({ status: 'check_in', visible: true });
             }, 20000);
         }
-    }
+    };
+    
+    
     return (
         <>
         <div>
