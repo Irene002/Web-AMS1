@@ -1,7 +1,7 @@
 import { FaCircleExclamation, FaChevronRight} from "react-icons/fa6"
 import { useNavigate, Outlet} from "react-router-dom"
 
-const Absensi = () => {
+const Attendance = () => {
     const Navigate = useNavigate();
 
     return (
@@ -35,4 +35,4 @@ const Absensi = () => {
         </div>
     )
 }
-export default Absensi
+export default Attendance

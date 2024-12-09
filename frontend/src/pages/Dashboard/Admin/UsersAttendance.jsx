@@ -9,7 +9,7 @@ const UsersAttendance = () => {
 
     return (
         <>
-            <div className="flex flex-row justify-between items-center mt-8">
+            <div className="flex flex-row justify-between items-center mt-8 AttendanceAct">
                 <div className="border-solid border border-black w-full max-w-[300px] min-w-[200px] flex flex-row gap-4 items-center p-2 rounded-md">
                     <button>
                         <FaMagnifyingGlass />
@@ -36,10 +36,9 @@ const UsersAttendance = () => {
             </div>
 
             <div>
-                <div className="TableUser flex md:overflow-x-scroll sm:overflow-x-scroll lg:overflow-x-hidden xl:overflow-hidden">
+                <div className="TableUser flex overflow-x-scroll">
                         <TableUser
                         />
-
                 </div>
                 <PageBtn />
             </div>

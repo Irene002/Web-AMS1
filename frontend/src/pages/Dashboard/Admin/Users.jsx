@@ -3,7 +3,7 @@ import { FaChevronRight, FaMagnifyingGlass, FaSort, FaPlus } from "react-icons/f
 
 import { useNavigate } from "react-router-dom"
 
-const Pengguna = () => {
+const Users = () => {
 
     const Navigate = useNavigate();
 
@@ -46,4 +46,4 @@ const Pengguna = () => {
         </div>
     )
 }
-export default Pengguna
+export default Users

@@ -7,7 +7,7 @@ import { FaChevronDown, FaXmark } from "react-icons/fa6";
 import SideLinks from '../DataMap/SideLinks.jsx'
 import { useState } from "react";
 
-const Sidebar = () => {
+const Sidebar = ({OnClickBtn}) => {
     const [isVisible, setVisible] = useState(true);
     const toggleVisibility = () => {
         setVisible(!isVisible);
@@ -36,9 +36,6 @@ const Sidebar = () => {
             console.log('Sidebar visibility toggled:', sidebar.classList.contains('Invisible'));
         }
     };
-
-    const Navigate = useNavigate();
-
 
     return (
         <div className={`Sidebar bg-black text-white py-8 px-2 flex flex-col gap-2 w-[16rem] h-svh overflow-clip fixed z-20`}>
@@ -70,7 +67,9 @@ const Sidebar = () => {
                     </div>
                 </div>
             </ul>
-            <button onClick={() => Navigate('/')} className=' hover:bg-red-950 transition-all duration-200 p-4 rounded-md flex items-center gap-4 w-full'> Log Out<span className='text-red-500'><FaDoorOpen /></span></button>
+            
+            <button onClick={OnClickBtn} className=' hover:bg-red-950 transition-all duration-200 p-4 rounded-md flex items-center gap-4 w-full'> Log Out<span className='text-red-500'><FaDoorOpen /></span></button>
+        
         </div>
     )
 }

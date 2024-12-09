@@ -4,9 +4,9 @@ import {
 
 const SideLinks = [
     {name:'Overview', path:'', iconLeft: <FaCircleQuestion/>},
-    {name:'Attendance', path:'Absensi', iconLeft: <FaNoteSticky/>},
-    {name:'User', path:'Pengguna', iconLeft: <FaUsers/>},
-    {name:'Setting', path:'Pengaturan', iconLeft: <FaGear/>},
+    {name:'Attendance', path:'Attendance', iconLeft: <FaNoteSticky/>},
+    {name:'Users', path:'Users', iconLeft: <FaUsers/>},
+    {name:'Settings', path:'Settings', iconLeft: <FaGear/>},
 
 ]
 
