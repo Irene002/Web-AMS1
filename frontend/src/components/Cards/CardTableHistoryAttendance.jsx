@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 
 const CardTableHistoryAttendance = ({ Date, CheckIn, CheckOut, Location }) => {
 
-    const [isActive, setIsActive] = useState(false); 
+    const [isActive, setIsActive] = useState(false);
 
     const CollapseClick = () => {
         setIsActive(!isActive);
     };
-    
+
 
     return (
         <>

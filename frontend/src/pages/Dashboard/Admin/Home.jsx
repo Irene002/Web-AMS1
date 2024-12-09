@@ -89,10 +89,10 @@ const Home = () => {
                         <h4>Check In</h4>
                         <div className='mt-4'>
                             <p>Select Status Check In (Optional)</p>
-                        <div className='flex flex-row gap-4 items-center mt-4'>
-                            <button onClick={() => handleSelection('WFH')} className={`shadow-sm shadow-gray-300 p-4 rounded-md transition-all duration-300 ${selected === 'WFH' ? 'bg-purple-500 text-white' : 'bg-gray-100 text-black hover:bg-gray-200'}`}>Work from Home</button>
-                            <button onClick={() => handleSelection('WFC')} className={`shadow-sm shadow-gray-300 rounded-md p-4 transition-all duration-300 ${selected === 'WFC' ? 'bg-purple-500 text-white' : 'bg-gray-100 text-black hover:bg-gray-200'}`}>Work from Cafe</button>
-                        </div>
+                            <div className='flex flex-row gap-4 items-center mt-4'>
+                                <button onClick={() => handleSelection('WFH')} className={`shadow-sm shadow-gray-300 p-4 rounded-md transition-all duration-300 ${selected === 'WFH' ? 'bg-purple-500 text-white' : 'bg-gray-100 text-black hover:bg-gray-200'}`}>Work from Home</button>
+                                <button onClick={() => handleSelection('WFC')} className={`shadow-sm shadow-gray-300 rounded-md p-4 transition-all duration-300 ${selected === 'WFC' ? 'bg-purple-500 text-white' : 'bg-gray-100 text-black hover:bg-gray-200'}`}>Work from Cafe</button>
+                            </div>
                         </div>
                         <form className='mt-8 flex flex-col gap-4'>
                             <label htmlFor="description">Description (Optional)</label>

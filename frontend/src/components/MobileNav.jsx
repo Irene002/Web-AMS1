@@ -1,7 +1,7 @@
-import {FaGear, FaHouse, FaFileLines, FaUser} from 'react-icons/fa6'
+import { FaGear, FaHouse, FaFileLines, FaUser } from 'react-icons/fa6'
 import { useNavigate } from 'react-router-dom'
 
-const MobileNav = ({ClassName}) => {
+const MobileNav = ({ ClassName }) => {
 
     const Navigate = useNavigate();
     return (
@@ -15,7 +15,7 @@ const MobileNav = ({ClassName}) => {
                     <FaFileLines size={20} />
                     <p className='MobileNavText'>Attendance</p>
                 </button>
-                <button onClick={ () => Navigate('Profile')} className={`flex flex-col items-center gap-2`}>
+                <button onClick={() => Navigate('Profile')} className={`flex flex-col items-center gap-2`}>
                     <FaUser size={20} />
                     <p className='MobileNavText'>Profile</p>
                 </button>

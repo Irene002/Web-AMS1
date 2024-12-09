@@ -17,8 +17,8 @@ const Routing = () => {
         <Routes>
             <Route path="/" element={<LoginPage />} />
 
-            <Route path="/Dashboard" element={<Dashboard/>}>
-            <Route index element={<Home/>} />
+            <Route path="/Dashboard" element={<Dashboard />}>
+                <Route index element={<Home />} />
                 {/* ABSENSI */}
                 <Route path="Attendance" element={<Attendance />}>
                     <Route index element={<UsersAttendance />} />

@@ -24,7 +24,7 @@ const UsersAttendance = () => {
                     ></ButtonMisc> */}
 
                     <button className="flex flex-row gap-2 bg-green-400 text-white hover:bg-green-500 duration-300 transition-all items-center p-2 rounded-md">
-                        <FaPlus/>
+                        <FaPlus />
                         Add Data
                     </button>
 
@@ -37,8 +37,8 @@ const UsersAttendance = () => {
 
             <div>
                 <div className="TableUser flex overflow-x-scroll">
-                        <TableUser
-                        />
+                    <TableUser
+                    />
                 </div>
                 <PageBtn />
             </div>
