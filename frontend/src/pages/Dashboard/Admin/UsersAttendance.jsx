@@ -3,12 +3,16 @@ import PageBtn from "../../../components/Button/PageBtn"
 
 import { FaMagnifyingGlass, FaSort, FaPlus } from "react-icons/fa6"
 import ButtonMisc from "../../../components/Button/ButtonMisc"
+import { useOutletContext } from "react-router-dom"
 
 const UsersAttendance = () => {
+
+    const {hanldeOpenAddData} = useOutletContext();
 
 
     return (
         <>
+
             <div className="flex flex-row justify-between items-center mt-8 AttendanceAct">
                 <div className="border-solid border border-black w-full max-w-[300px] min-w-[200px] flex flex-row gap-4 items-center p-2 rounded-md">
                     <button>
@@ -23,7 +27,7 @@ const UsersAttendance = () => {
                     Class={'bg-green-400 p-2 text-white hover:bg-green-500 duration-300 transition-all'}
                     ></ButtonMisc> */}
 
-                    <button className="flex flex-row gap-2 bg-green-400 text-white hover:bg-green-500 duration-300 transition-all items-center p-2 rounded-md">
+                    <button onClick={hanldeOpenAddData} className="flex flex-row gap-2 bg-green-400 text-white hover:bg-green-500 duration-300 transition-all items-center p-2 rounded-md">
                         <FaPlus />
                         Add Data
                     </button>

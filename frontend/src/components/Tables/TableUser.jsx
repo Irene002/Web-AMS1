@@ -6,10 +6,10 @@ import { FaPenToSquare, FaSquareMinus } from "react-icons/fa6";
 const TableUser = () => {
 
     const Users = [
-        { id: '1', nama: 'Sean Ishak Adare', jabatan: 'Intern', devisi: 'Technical Web', status: 'On-site', check_in: '08:00 AM', check_out: '05:00 PM', lokasi: 'Infinite Learning' },
-        { id: '2', nama: 'Reggi Saputra Salawangi', jabatan: 'Intern', devisi: 'Technical Web', status: 'On-site', check_in: '08:00 AM', check_out: '05:00 PM', lokasi: 'Infinite Learning' },
-        { id: '3', nama: 'Leo Richardo Alelo', jabatan: 'Intern', devisi: 'Technical Web', status: 'On-site', check_in: '08:00 AM', check_out: '05:00 PM', lokasi: 'Infinite Learning' },
-        { id: '4', nama: 'Firstonly Marshel Naharia', jabatan: 'Intern', devisi: 'Technical Web', status: 'On-site', check_in: '08:00 AM', check_out: '05:00 PM', lokasi: 'Infinite Learning' },
+        { id: '1', nama: 'Sean Ishak Adare', jabatan: 'Intern', devisi: 'Technical Web', status: 'On-site', date: '09-12-2024', check_in: '08:00 AM', check_out: '05:00 PM', lokasi: 'Infinite Learning' },
+        { id: '2', nama: 'Reggi Saputra Salawangi', jabatan: 'Intern', devisi: 'Technical Web', status: 'On-site', date: '09-12-2024', check_in: '08:00 AM', check_out: '05:00 PM', lokasi: 'Infinite Learning' },
+        { id: '3', nama: 'Leo Richardo Alelo', jabatan: 'Intern', devisi: 'Technical Web', status: 'On-site', date: '09-12-2024', check_in: '08:00 AM', check_out: '05:00 PM', lokasi: 'Infinite Learning' },
+        { id: '4', nama: 'Firstonly Marshel Naharia', jabatan: 'Intern', devisi: 'Technical Web', status: 'On-site', date: '09-12-2024', check_in: '08:00 AM', check_out: '05:00 PM', lokasi: 'Infinite Learning' },
     ]
 
     // const [user, setUser]= useState([]);
@@ -43,6 +43,7 @@ const TableUser = () => {
                         <th>Role</th>
                         <th>Division</th>
                         <th>Status</th>
+                        <th>Date</th>
                         <th>Check In</th>
                         <th>Check Out</th>
                         <th>Location</th>
@@ -57,6 +58,7 @@ const TableUser = () => {
                             <td>{value.jabatan}</td>
                             <td>{value.devisi}</td>
                             <td>{value.status}</td>
+                            <td>{value.date}</td>
                             <td>{value.check_in}</td>
                             <td>{value.check_out}</td>
                             <td>{value.lokasi}</td>

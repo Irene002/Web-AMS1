@@ -46,7 +46,7 @@ const Navbar = () => {
                 </div>
                 <div className="flex flex-row gap-4 items-center">
                     Sean Ishak Adare
-                    <button onClick={() => navigate('Profile')} className='bg-green-600 border-solid border-[#A25BFB] border-2 flex w-12 h-12 overflow-clip rounded-full'>
+                    <button onClick={() => navigate('Settings/Profile')} className='bg-green-600 border-solid border-[#A25BFB] border-2 flex w-12 h-12 overflow-clip rounded-full'>
                         <img className='pointer-events-none w-full h-auto' src={logo1} alt="User-Image" />
                     </button>
                     <button>
