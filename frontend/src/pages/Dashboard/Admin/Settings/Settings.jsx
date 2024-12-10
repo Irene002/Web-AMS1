@@ -1,13 +1,15 @@
-import Card2 from "../../../components/Cards/Card2.jsx";
+import Card2 from "../../../../components/Cards/Card2.jsx";
 import {FaChevronRight} from 'react-icons/fa6'
 import { useNavigate } from "react-router-dom";
 
-const Pengaturan = () => {
+const Settings = () => {
+
+    const navigate = useNavigate();
 
     const SettingsCard = [
         {Title:'Duration Language', Description:'Set your prefered language.', ButtonClass:'p-4 bg-purple-500 text-white rounded-md shadow-sm hover:bg-purple-600 transition-all duration-300', Button:'English', Onclick:''},
         {Title:'Date Format', Description:'Preview: 11/12/2024', ButtonClass:'p-4 bg-purple-500 text-white hover:bg-purple-600 transition-all duration-500 rounded-md', Button:'Edit Time', Onclick:''},
-        {Title:'Error Log', Description:`If there's any problem within the system, it will all be stored in here.`, ButtonClass:'hover:bg-gray-100 transition-all duration-500 p-4 rounded-full', Button:<FaChevronRight/> , Onclick:''},
+        {Title:'Error Log', Description:`If there's any problem within the system, it will all be stored in here.`, ButtonClass:'hover:bg-gray-100 transition-all duration-500 p-4 rounded-full', Button:<FaChevronRight/> , Onclick:() => navigate('ErrorLog')},
     ]
 
     const Navigate = useNavigate();
@@ -40,4 +42,4 @@ const Pengaturan = () => {
         </div>
     )
 }
-export default Pengaturan
+export default Settings

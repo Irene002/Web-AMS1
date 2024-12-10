@@ -3,7 +3,7 @@ import { FaChevronRight, FaMagnifyingGlass, FaSort, FaPlus } from "react-icons/f
 
 import { useNavigate } from "react-router-dom"
 
-const Pengguna = () => {
+const Users = () => {
 
     const Navigate = useNavigate();
 
@@ -19,7 +19,7 @@ const Pengguna = () => {
                 </div>
             </div>
             <h2 className='font-bold mb-4'>Users</h2>
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-row justify-between PenggunaAct">
                 <div className="border-solid border border-black w-full max-w-[300px] min-w-[200px] flex flex-row gap-4 items-center p-2 rounded-md">
                     <button>
                         <FaMagnifyingGlass />
@@ -40,9 +40,10 @@ const Pengguna = () => {
                 </div>
 
             </div>
-
+            <div className="flex overflow-x-scroll">
             <TableUser />
+            </div>
         </div>
     )
 }
-export default Pengguna
+export default Users

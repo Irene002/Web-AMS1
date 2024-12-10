@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 
 const CardTableHistoryAttendance = ({ Date, CheckIn, CheckOut, Location }) => {
 
-    const [isActive, setIsActive] = useState(false); 
+    const [isActive, setIsActive] = useState(false);
 
     const CollapseClick = () => {
         setIsActive(!isActive);
     };
-    
+
 
     return (
         <>
@@ -33,7 +33,7 @@ const CardTableHistoryAttendance = ({ Date, CheckIn, CheckOut, Location }) => {
                         <p>{Location}</p>
                     </div>
                     <div>
-                        <h5>Notes</h5>
+                        <h5>Status</h5>
                         <p>--:--</p>
                     </div>
                 </div>
