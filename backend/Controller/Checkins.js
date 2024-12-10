@@ -13,16 +13,12 @@ export const getCheckins = async (req, res) => {
 // add data
 
 export const addCheckins = async (req, res) => {
-    const { name, jabatan, devisi, status, check_in, check_out, lokasi } = req.body;
+    const { id_user, check_in, check_out } = req.body;
     try {
-        await query("INSERT INTO checkins (nama, jabatan, devisi, status, check_in, check_out, lokasi) VALUES (?, ?, ?, ?, ?, ?, ?)", [
-            name,
-            jabatan,
-            devisi,
-            status, 
+        await query("INSERT INTO checkins (id_user, check_in, check_out) VALUES (?, ?, ?)", [
+            id_user,
             check_in, 
             check_out,
-            lokasi,
         ]);
         return res.status(200).json({msg: "Check in ditambahkan"});
     }   catch (error) {
@@ -33,18 +29,14 @@ export const addCheckins = async (req, res) => {
 // update data 
 
 export const updateCheckins = async (req, res) => {
-    const {id} = req.params;
-    const {name, jabatan, devisi, status, check_in, check_out, lokasi } = req.body;
+    const {id_checkins} = req.params;
+    const { id_user, check_in, check_out } = req.body;
     try {
-        await query("UPDATE checkins SET nama = ?, jabatan = ?, devisi = ?, status = ?, check_in = ?, check_out = ?, lokasi = ? WHERE id = ?", [
-            name,
-            jabatan,
-            devisi,
-            status,
+        await query("UPDATE checkins SET id_user = ?, check_in = ?, check_out = ? WHERE id = ?", [
+            id_user,
             check_in,
             check_out,
-            lokasi,
-            id,
+            id_checkins,
         ]);
         return res.status(200).json({msg: "Check in diupdate"});
     }   catch (error) {
@@ -56,9 +48,9 @@ export const updateCheckins = async (req, res) => {
 // delete data
 
 export const deleteCheckins = async (req, res) => {
-    const { id } = req.params;
+    const { id_checkins } = req.params;
     try {
-        await query("DELETE FROM checkins WHERE id = ?", [id]);
+        await query("DELETE FROM checkins WHERE id = ?", [id_checkins]);
         return res.status(200).json({msg: "Check in dihapus"});
     }   catch (error) {
         console.log(error)
