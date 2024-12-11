@@ -27,6 +27,10 @@ const Profile = () => {
           <button onClick={() => Navigate('/Dashboard')}>Dashboard</button>
           <FaChevronRight size={11} />
         </div>
+        <div className="flex flex-row gap-2 items-center opacity-50">
+          <button onClick={() => Navigate('/Dashboard/Settings')}>Settings</button>
+          <FaChevronRight size={11} />
+        </div>
         <div>
           <p className="text-purple-500">Profile</p>
         </div>
