@@ -15,7 +15,7 @@ export const getCheckins = async (req, res) => {
 export const addCheckins = async (req, res) => {
     const { id_user, check_in, check_out } = req.body;
     try {
-        await query("INSERT INTO checkins (id_user, check_in, check_out) VALUES (?, ?, ?)", [
+        await query("INSERT INTO checkins (id_checkins, username , check_in, check_out) VALUES (?, ?, ?, ?)", [
             id_user,
             check_in, 
             check_out,
