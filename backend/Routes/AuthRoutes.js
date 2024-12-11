@@ -1,13 +1,11 @@
-// Routes/AuthRoutes.js
 import express from "express";
 import { pool } from "../Database/db.js";
 import { hashPassword } from "../Services/PasswordUtils.js";
-import { validateLoginInput } from "../Middlewares/validateLogin.js"; // Mengimpor middleware validasi
+import { validateLoginInput } from "../Middlewares/validateLogin.js";
 import verifyLogin from "../Middlewares/VerifyLogin.js";
 
 const router = express.Router();
 
-// Rute signup untuk membuat user baru
 router.post('/signup', async (req, res) => {
     const { username, password } = req.body;
 
@@ -16,10 +14,9 @@ router.post('/signup', async (req, res) => {
     }
 
     try {
-        // Hash password sebelum disimpan ke database
+
         const hashedPassword = await hashPassword(password);
 
-        // Masukkan data user ke dalam database
         const [result] = await pool.query(
             'INSERT INTO login (username, password) VALUES (?, ?)',
             [username, hashedPassword]
@@ -32,7 +29,6 @@ router.post('/signup', async (req, res) => {
     }
 });
 
-// Rute login dengan validasi input dan verifikasi login
 router.post('/login', validateLoginInput, verifyLogin, (req, res) => {
     const { id_user, username } = req.user;
     res.status(200).json({

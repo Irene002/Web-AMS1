@@ -57,8 +57,3 @@ export const deleteCheckins = async (req, res) => {
         return res.status(500).json({msg: "Terjadi kesalahan diserver"});
     }
 };
-
-
-
-
-
