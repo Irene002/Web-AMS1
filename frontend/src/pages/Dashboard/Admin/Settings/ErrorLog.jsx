@@ -45,7 +45,7 @@ const ErrorLog = () => {
             {ErrorLogPop && ViewError && (
                 <>
                     <div className="inset-0 z-50 fixed bg-black bg-opacity-20 flex justify-center items-center">
-                        <div className="bg-white border-2 border-red-400 rounded-lg w-full max-w-[800px] min-w-[300px] p-8 FadeIn">
+                        <div className="bg-white border-2 border-red-400 rounded-lg w-full max-w-[800px] min-w-[300px] p-6 FadeIn">
                             <div className="flex justify-end">
                                 <button onClick={handleCloseErrorLog} className="p-2 text-xl transition-all duration-300 hover:bg-purple-500 hover:text-white rounded-md"><FaXmark /></button>
                             </div>
@@ -84,9 +84,13 @@ const ErrorLog = () => {
                     </div>
                 </div>
                 <h2>Error Log</h2>
+                <p>If something doesn't work like expected, AMS will notify you here.</p>
                 <br />
 
                 {/*Wrapper*/}
+                <div className="flex justify-end">
+                    <button className="p-4 mb-4 rounded-md text-white bg-purple-500">Clear all</button>
+                </div>
                 <div className='flex flex-col gap-8'>
                     {ErrorCard.map((error, index) => (
                         <div key={index} className={`bg-white shadow-md rounded-md p-8`}>

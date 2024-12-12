@@ -5,20 +5,28 @@ import { FaPenToSquare, FaSquareMinus } from "react-icons/fa6";
 
 const TableUser = () => {
 
+    const Users = [
+        { id: '1', nama: 'Sean Ishak Adare', jabatan: 'Intern', devisi: 'Technical Web', status: 'On-site', date: '09-12-2024', check_in: '08:00 AM', check_out: '05:00 PM', lokasi: 'Infinite Learning' },
+        { id: '2', nama: 'Reggi Saputra Salawangi', jabatan: 'Intern', devisi: 'Technical Web', status: 'On-site', date: '09-12-2024', check_in: '08:00 AM', check_out: '05:00 PM', lokasi: 'Infinite Learning' },
+        { id: '3', nama: 'Leo Richardo Alelo', jabatan: 'Intern', devisi: 'Technical Web', status: 'On-site', date: '09-12-2024', check_in: '08:00 AM', check_out: '05:00 PM', lokasi: 'Infinite Learning' },
+        { id: '4', nama: 'Firstonly Marshel Naharia', jabatan: 'Intern', devisi: 'Technical Web', status: 'On-site', date: '09-12-2024', check_in: '08:00 AM', check_out: '05:00 PM', lokasi: 'Infinite Learning' },
+    ]
+
     const [user, setUser] = useState([]);
 
-    useEffect(() => {
-        const getData = async () => {
-            try {
-                const result = await axios.get(`http://localhost:3015/checkins`)
-                
-                
-                setUser(result.data.data);
-            } catch (error) {
-                console.log(error)
-            }
+    const getData = async () => {
+        try {
+            const result = await axios.get(`http://localhost:3015/checkins`)
+            setUser(result.data.data);
+        } catch (error) {
+            console.log(error)
         }
+    }
+    
+    useEffect(() => {
+        getData()
     }, [])
+
 
     return (
         <>

@@ -1,4 +1,5 @@
-const Card2 = ({ ButtonClass, OnClick, Title, Description, Button }) => {
+const Card2 = ({ ButtonClass, OnClick, Title, Description, Button, Notify }) => {
+
     return (
         <div className='bg-white shadow-md p-8 rounded-lg'>
             <div className="flex flex-row justify-between items-center">
