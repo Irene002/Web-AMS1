@@ -5,21 +5,6 @@ import { FaPenToSquare, FaSquareMinus } from "react-icons/fa6";
 
 const TableUser = ({refresh}) => {
 
-    // const [user, setUser] = useState([]);
-
-    // useEffect(() => {
-    //     const getData = async () => {
-    //         try {
-    //             const result = await axios.get(`http://localhost:3015/checkins`)
-                
-                
-    //             setUser(result.data.data);
-    //         } catch (error) {
-    //             console.log(error)
-    //         }
-    //     }
-    // }, [])
-
 
     const [AttendanceData, SetAttendanceData] = useState([]);
     const [error, Seterror] = useState('');
