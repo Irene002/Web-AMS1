@@ -11,6 +11,18 @@ import axios from 'axios'
 
 const Home = () => {
 
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        // Retrieve user data from localStorage
+        const storedUser = JSON.parse(localStorage.getItem('user'));
+        if (storedUser) {
+            setUser(storedUser); // Set user data to state
+        }
+    }, []);
+
+
+
     const [isOpenCheck, setisOpenCheck] = useState(false);
     const closeCheck = () => {
         setisOpenCheck(false);
@@ -107,7 +119,11 @@ const Home = () => {
             )}
 
             <div className={`FadeInSection`}>
-                <h2 className='font-bold'>Welcome <span className='GradientFont'>Sean Ishak Adare</span> ,</h2>
+            {user ? (
+                <h2>Hello, <span className='GradientFont'>{user.name}</span> </h2> // Display the user's name
+            ) : (
+                <p>Loading user data...</p>
+            )}
                 <h4>Find commonly used pages below.</h4>
                 <hr className='mb-8 mt-4' />
                 <div className={`flex flex-col gap-8`}>

@@ -8,9 +8,16 @@ import { FaDoorOpen } from "react-icons/fa6";
 
 const Dashboard = () => {
 
-        const [isOpen, setIsOpen] = useState(false);
+    const Navigate = useNavigate();
+    
+        const handleLogout = () => {
+            localStorage.removeItem('user');
+            localStorage.removeItem('token');
+    
+            Navigate('/');
+        }
 
-        const Navigate = useNavigate();
+        const [isOpen, setIsOpen] = useState(false);
 
         const handleLogoutButton = () => {
             setIsOpen(false);
@@ -34,7 +41,7 @@ const Dashboard = () => {
                             </div>
                             <div className="flex flex-row gap-4 justify-end mt-8">
                             <button onClick={() => setIsOpen(false)} className="p-4 bg-gray-100 rounded-md hover:bg-gray-200 transition-all duration-300">Cancel</button>
-                            <button className="bg-red-500 hover:bg-red-600 transition-all duration-300 p-4 rounded-md text-white" onClick={handleLogoutButton}>Logout</button>
+                            <button className="bg-red-500 hover:bg-red-600 transition-all duration-300 p-4 rounded-md text-white" onClick={handleLogout}>Logout</button>
                             </div>
                         </div>
                     </div>

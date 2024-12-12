@@ -1,8 +1,7 @@
-import TableUser from "../../../components/Tables/TableUser"
+import TableAttendance from "../../../components/Tables/TableAttendance"
 import PageBtn from "../../../components/Button/PageBtn"
 
 import { FaMagnifyingGlass, FaSort, FaPlus } from "react-icons/fa6"
-import ButtonMisc from "../../../components/Button/ButtonMisc"
 import { useOutletContext } from "react-router-dom"
 
 const UsersAttendance = () => {
@@ -41,7 +40,7 @@ const UsersAttendance = () => {
 
             <div>
                 <div className="TableUser flex overflow-x-scroll">
-                    <TableUser
+                    <TableAttendance
                     />
                 </div>
                 <PageBtn />
