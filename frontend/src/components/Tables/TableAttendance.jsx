@@ -60,8 +60,8 @@ const TableAttendance = () => {
                             <td>{value.date}</td>
                             <td>{value.name}</td>
                             <td>{value.role}</td>
-                            <td>{value.devision}</td>
-                            <td>{value.status || 'Miskin Data'}</td>
+                            <td>{value.division}</td>
+                            <td>{value.status || '--:--'}</td>
                             <td>
                                 <div className="flex flex-row items-center gap-4">
                                     <button className=""><FaPenToSquare size={25} /></button>

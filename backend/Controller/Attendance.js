@@ -2,7 +2,7 @@ import { query  } from "../Database/db.js";
 
 export const getAttendance = async (req, res) => {
     try {
-        const Attendance = await query (`SELECT u.name, u.role, u.devision, a.date, a.check_in, a.check_out, a.status FROM user u LEFT JOIN attendance a ON u.user_id = a.id_user`);
+        const Attendance = await query (`SELECT u.name, u.role, u.division, a.date, a.check_in, a.check_out, a.status FROM user u LEFT JOIN attendance a ON u.user_id = a.id_user`);
         return res.status(200).json({success: true, data: Attendance});
     }   catch (error) {
         console.error("Terjadi kesalahan", error);

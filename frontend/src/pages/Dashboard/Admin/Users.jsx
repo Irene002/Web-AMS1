@@ -48,6 +48,10 @@ const Users = () => {
 
                 setMessageSucces('User Added successfully.');
 
+                setTimeout(() => {
+                    setMessageSucces(false);
+                }, 5000);
+
                 setAddUser(false);
 
                 setformDataUser({
@@ -62,6 +66,10 @@ const Users = () => {
 
             } else{
                 setMessageError('Failed to add user')
+
+                setTimeout(() => {
+                    setMessageError(false)
+                }, 5000);
             };
 
         } catch (error) {
