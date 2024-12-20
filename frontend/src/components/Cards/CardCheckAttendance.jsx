@@ -3,7 +3,7 @@ import { FaLocationDot } from "react-icons/fa6";
 
 import DigitalTime from '../Misc/DigitalTime.jsx'
 
-const CardCheckAttendance = ({ onclick, buttonLabel }) => {
+const CardCheckAttendance = ({ onclickCheckIn, onclickCheckOut, disableCheckIn, disableCheckOut }) => {
 
 
     return (
@@ -15,9 +15,24 @@ const CardCheckAttendance = ({ onclick, buttonLabel }) => {
 
             <div className={`flex flex-row items-center gap-4`}>
                 <Button
-                    onClick={onclick}
-                    Class={`my-4 bg-purple-500 text-white hover:bg-purple-400`}
-                    BtnLabel={buttonLabel}
+                    disableBtn={disableCheckIn}
+                    onClick={onclickCheckIn}
+                    Class={`my-4 text-white
+                        ${
+                            disableCheckIn ? 'cursor-not-allowed bg-purple-950' : 'bg-purple-500 hover:bg-purple-400'
+                        }
+                        `}
+                    BtnLabel={'Check In'}
+                />
+                <Button
+                    disableBtn={disableCheckOut}
+                    onClick={onclickCheckOut}
+                    Class={`my-4 text-white
+                        ${
+                            disableCheckOut ? 'cursor-not-allowed bg-red-300' : 'bg-red-500 hover:bg-red-600'
+                        }
+                        `}
+                    BtnLabel={'Check Out'}
                 />
 
             </div>

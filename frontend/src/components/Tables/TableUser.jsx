@@ -31,7 +31,6 @@ const TableUser = ({refresh}) => {
                     <tr>
                         <th>No.</th>
                         <th>Username</th>
-                        <th>Password</th>
                         <th>Name</th>
                         <th>Role</th>
                         <th>Division</th>
@@ -43,7 +42,6 @@ const TableUser = ({refresh}) => {
                         <tr key={index}>
                             <td>{index+1}</td>
                             <td>{value.username}</td>
-                            <td>{value.password}</td>
                             <td>{value.name}</td>
                             <td>{value.role}</td>
                             <td>{value.division}</td>

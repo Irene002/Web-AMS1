@@ -1,59 +1,89 @@
-import { query  } from "../Database/db.js";
+import { query } from "../Database/db.js";
 
 export const getAttendance = async (req, res) => {
     try {
-        const Attendance = await query (`SELECT u.name, u.role, u.division, a.date, a.check_in, a.check_out, a.status FROM user u LEFT JOIN attendance a ON u.user_id = a.id_user`);
-        return res.status(200).json({success: true, data: Attendance});
-    }   catch (error) {
+        const Attendance = await query(`SELECT u.name, u.role, u.division, a.date, a.check_in, a.check_out, a.status FROM user u LEFT JOIN attendance a ON u.id_user = a.id_user`);
+        return res.status(200).json({ success: true, data: Attendance });
+    } catch (error) {
         console.error("Terjadi kesalahan", error);
-        return res.status(500).json({msg: "Terjadi kesalahan pada server"});
+        return res.status(500).json({ msg: "Terjadi kesalahan pada server" });
     }
 };
 
-// add data
 
-export const addAttendance = async (req, res) => {
-    const { id_user, check_in, check_out } = req.body;
+    // Record Attendance Data Table
+
+export const getRecordAttendance = async (req, res) => {
+
+    const { id_user } = req.query;
+
+    if (!id_user) {
+        return res.status(400).json({ msg: "User ID is required." });
+    }
+
     try {
-        await query("INSERT INTO attendance (id_attendance, username , check_in, check_out) VALUES (?, ?, ?, ?)", [
-            id_user,
-            check_in, 
-            check_out,
-        ]);
-        return res.status(200).json({msg: "Check in ditambahkan"});
-    }   catch (error) {
-        return res.status(500).json({msg: "Terjadi kesalahan pada server" });
+        const RecordAttendance = await query(`SELECT date, check_in, check_out, status FROM attendance WHERE id_user = ? ORDER BY date DESC`, [id_user]);
+        
+        if (RecordAttendance.length === 0) {
+            return res.status(404).json({msg: 'No attendance records found for this user.'})
+        }
+        return res.status(200).json({ success: true, data: RecordAttendance });
+    } catch (error) {
+        console.error("Terjadi kesalahan", error);
+        return res.status(500).json({ msg: "Terjadi kesalahan pada server" });
     }
 };
 
-// update data 
 
-export const updateAttendance = async (req, res) => {
-    const {id_attendance} = req.params;
-    const { id_user, check_in, check_out } = req.body;
+
+// Check In
+
+export const checkIn = async (req, res) => {
+    const { id_user, date, check_in, status } = req.body;
+
+    if (!id_user || !date || !check_in) {
+        return res.status(400).json({ msg: "User  ID, Date, and Check-in time are required." });
+    }
+
     try {
-        await query("UPDATE attendance SET id_user = ?, check_in = ?, check_out = ? WHERE id = ?", [
-            id_user,
-            check_in,
-            check_out,
-            id_attendance,
-        ]);
-        return res.status(200).json({msg: "Check in diupdate"});
-    }   catch (error) {
-        console.log(error)
-        return res.status(500).json({msg: "Terjadi kesalahan pada server"});
+
+        const result = await query(
+            "INSERT INTO attendance (id_user, date, check_in, check_out, status) VALUES (?, ?, ?, NULL, ?)",
+            [id_user, date, check_in, status || '']
+        );
+
+        const id_attendance = result.insertId; 
+
+        return res.status(200).json({ msg: "Check In added successfully", id_attendance });
+    } catch (error) {
+        console.error("Error during check-in:", error);
+        return res.status(500).json({ msg: "Server Error during check-in" });
     }
 };
 
-// delete data
+// Check Out
 
-export const deletettendance = async (req, res) => {
-    const { id_attendance } = req.params;
+export const checkOut = async (req, res) => {
+    const { check_out, id_attendance } = req.body; 
+
+    // Validate input
+    if (!check_out || !id_attendance) {
+        return res.status(400).json({ success: false, message: "Check-out time and attendance ID are required." });
+    }
+
     try {
-        await query("DELETE FROM attendance WHERE id = ?", [id_attendance]);
-        return res.status(200).json({msg: "Check in dihapus"});
-    }   catch (error) {
-        console.log(error)
-        return res.status(500).json({msg: "Terjadi kesalahan diserver"});
+        const result = await query(
+            "UPDATE attendance SET check_out = ? WHERE id_attendance = ? AND check_out IS NULL",
+            [check_out, id_attendance]
+        );
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ success: false, message: "No active check-in found for this attendance ID." });
+        }
+
+        return res.status(200).json({ success: true, message: "Check-out recorded successfully." });
+    } catch (error) {
+        console.error("Error during check-out:", error);
+        return res.status(500).json({ success: false, message: "Server error during check-out." });
     }
 };

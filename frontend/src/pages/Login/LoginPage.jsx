@@ -11,37 +11,43 @@ const LoginPage = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [error, Seterror] = useState('');
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const handleSubmitLogin = async (event) => {
         event.preventDefault();
-        Seterror('');
+        setError('');
+        setLoading(true);
 
-        if (!username || !password){
-            Seterror('Username and Password are required!')
+        if (!username || !password) {
+            setError('Username and Password are required!');
+            setLoading(false);
             return;
         }
 
-        try{
-            const response = await fetch('http://localhost:3015/login', 
-            {method: 'POST', headers:{
-                'Content-Type': 'application/json',
-            }, body: JSON.stringify({username, password}),
-        });
+        try {
+            const response = await fetch('http://localhost:3015/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                }, body: JSON.stringify({ username, password }),
+            });
 
-        const data = await response.json();
+            const data = await response.json();
 
-        if (!response.ok){
-            Seterror(data.message || 'Invalid Credentials');
-            return;
-        }
+            if (!response.ok) {
+                setError(data.message || 'Invalid Username or Password');
+                setLoading(false);
+                return;
+            }
 
-        localStorage.setItem('user', JSON.stringify(data.user));
-        localStorage.setItem('token', data.token);
-        window.location.href = '/Dashboard'
+            localStorage.setItem('user', JSON.stringify(data.user));
+            localStorage.setItem('token', data.token);
+            window.location.href = '/Dashboard'
 
-        } catch (error){
-            Seterror('Something wnet wrong, please try again.')
+        } catch (error) {
+            setError('Something went wrong, please try again.');
+            setLoading(false);
         }
     }
 
@@ -65,10 +71,10 @@ const LoginPage = () => {
                                 <input autoComplete="off" onChange={(e) => setPassword(e.target.value)} value={password} className={`bg-white p-3 rounded-sm focus:outline-none`} type='password' name='password' placeholder='Password' />
                             </div>
                             <div className="flex justify-end">
-                            {error && <p className={`text-red-500`}>{error}</p>}
+                                {error && <p className={`text-red-500`}>{error}</p>}
                             </div>
-                            <button type="submit" className='bg-purple-500 text-white p-4 rounded-lg'>
-                                Login
+                            <button type="submit" disabled={loading} className={`bg-purple-500 text-white p-4 rounded-lg ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}>
+                                {loading ? 'Loading...' : 'Login'}
                             </button>
                         </form>
                     </div>

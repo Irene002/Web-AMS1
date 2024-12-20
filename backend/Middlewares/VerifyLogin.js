@@ -21,8 +21,14 @@ const verifyLogin = async (req, res, next) => {
             return res.status(401).json({ msg: "Invalid username or password" });
         }
 
-        req.user = { id_user: user.id_user, username: user.username };
-        next();
+         // Send user details back in a `user` object
+        return res.status(200).json({
+            user: {
+                id_user: user.id_user,
+                username: user.username
+            }
+        });
+
     } catch (err) {
         console.error("Error verifying login:", err);
         res.status(500).json({ msg: "Internal server error" });

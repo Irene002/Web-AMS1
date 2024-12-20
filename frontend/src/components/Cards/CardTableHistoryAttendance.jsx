@@ -1,7 +1,7 @@
 import { FaChevronDown } from 'react-icons/fa'
 import { useState, useEffect } from "react";
 
-const CardTableHistoryAttendance = ({ Date, CheckIn, CheckOut, Location }) => {
+const CardTableHistoryAttendance = ({ Date, CheckIn, CheckOut, Status }) => {
 
     const [isActive, setIsActive] = useState(false);
 
@@ -28,13 +28,13 @@ const CardTableHistoryAttendance = ({ Date, CheckIn, CheckOut, Location }) => {
                         <h5>Checked Out</h5>
                         <p>{CheckOut}</p>
                     </div>
-                    <div>
+                    {/* <div>
                         <h5>Location</h5>
                         <p>{Location}</p>
-                    </div>
+                    </div> */}
                     <div>
                         <h5>Status</h5>
-                        <p>--:--</p>
+                        <p>{Status}</p>
                     </div>
                 </div>
             </div>

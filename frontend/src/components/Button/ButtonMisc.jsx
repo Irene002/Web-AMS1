@@ -1,7 +1,7 @@
-const ButtonMisc = ({ onClick, Class, BtnLabel }) => {
+const ButtonMisc = ({ onClick, Class, BtnLabel, disableBtn }) => {
     return (
         <>
-            <button onClick={onClick} className={`p-3 rounded-md transition-all duration-300 ] ${Class}`}> {BtnLabel} </button>
+            <button disabled={disableBtn} onClick={onClick} className={`p-3 rounded-md transition-all duration-300 ] ${Class}`}> {BtnLabel} </button>
         </>
     )
 }
