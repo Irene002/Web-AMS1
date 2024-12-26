@@ -1,9 +1,7 @@
-import { useNavigate } from "react-router-dom";
 import logo1 from '../../assets/LogoIL.png'
 import { useState } from "react";
 
 const LoginPage = () => {
-    const navigate = useNavigate();
     const contents = {
         image: logo1,
         heading: 'Login',

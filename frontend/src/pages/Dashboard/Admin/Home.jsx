@@ -14,10 +14,14 @@ const Home = () => {
     // User Token
 
     const [user, setUser] = useState(null);
+    const [role, setRole] = useState(null);
 
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
+        // Role Placeholder
+        const storedRole = localStorage.getItem('role');
         console.log("Stored user in localStorage:", storedUser);
+        console.log("Stored role in localStorage:", storedRole);
 
         if (storedUser) {
             const parsedUser = JSON.parse(storedUser);
@@ -26,6 +30,14 @@ const Home = () => {
             setUser(parsedUser);
         } else {
             console.error("No user found in localStorage");
+        }
+
+        // Placeholder Role
+
+        if (storedRole) {
+            setRole(storedRole);
+        } else {
+            console.error("No role found in localStorage");
         }
     }, []);
 
@@ -207,7 +219,7 @@ const Home = () => {
             )}
 
             <div className={`FadeInSection`}>
-                <h2>Hello, <span className='GradientFont'>Sean Ishak Adare</span></h2>
+                <h2>Hello, <span className='GradientFont'>{user?.username}</span></h2>
                 <h4>Find commonly used pages below.</h4>
                 <hr className='mb-8 mt-4' />
                 <div className={`flex flex-col gap-8`}>

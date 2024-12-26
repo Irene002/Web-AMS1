@@ -3,7 +3,7 @@ import logo2 from '../assets/LogoIL.png'
 import { FaChevronDown, FaComment, FaBell, FaBars } from 'react-icons/fa6'
 import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({userName}) => {
     const navigate = useNavigate();
 
     const handleButtonClick = () => {
@@ -45,7 +45,7 @@ const Navbar = () => {
                     <button> <FaComment /> </button>
                 </div>
                 <div className="flex flex-row gap-4 items-center">
-                    Sean Ishak Adare
+                    {userName}
                     <button onClick={() => navigate('Settings/Profile')} className='bg-green-600 border-solid border-[#A25BFB] border-2 flex w-12 h-12 overflow-clip rounded-full'>
                         <img className='pointer-events-none w-full h-auto' src={logo1} alt="User-Image" />
                     </button>
