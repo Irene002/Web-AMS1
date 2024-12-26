@@ -5,12 +5,6 @@ const Footer = () => {
         facebook: 'https://www.facebook.com/infinitelearning.id',
         linkedin: 'https://www.linkedin.com/company/infinite-learning-indonesia/',
         youtube: 'https://www.youtube.com/@infinitelearningid',
-        link5: '',
-        link6: '',
-        link7: '',
-        link8: '',
-        link9: '',
-        link10: '',
     }
 
     return (
