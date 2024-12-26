@@ -19,7 +19,7 @@ const CardCheckAttendance = ({ onclickCheckIn, onclickCheckOut, disableCheckIn, 
                     onClick={onclickCheckIn}
                     Class={`my-4 text-white
                         ${
-                            disableCheckIn ? 'cursor-not-allowed bg-purple-950' : 'bg-purple-500 hover:bg-purple-400'
+                            disableCheckIn ? 'cursor-not-allowed bg-purple-300' : 'bg-purple-500 hover:bg-purple-400'
                         }
                         `}
                     BtnLabel={'Check In'}

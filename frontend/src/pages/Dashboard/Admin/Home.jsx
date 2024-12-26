@@ -11,15 +11,17 @@ import axios from 'axios'
 
 const Home = () => {
 
+    // User Token
+
     const [user, setUser] = useState(null);
 
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
-        console.log("Stored user in localStorage:", storedUser); 
+        console.log("Stored user in localStorage:", storedUser);
 
         if (storedUser) {
             const parsedUser = JSON.parse(storedUser);
-            console.log("Parsed user object:", parsedUser); 
+            console.log("Parsed user object:", parsedUser);
 
             setUser(parsedUser);
         } else {
@@ -33,9 +35,7 @@ const Home = () => {
 
     // Check In Pop Up
     const [isOpenCheck, setisOpenCheck] = useState(false);
-    const closeCheck = () => {
-        setisOpenCheck(false);
-    }
+    const closeCheck = () => {setisOpenCheck(false);}
 
     // Check Out PopUp
     const [CheckOutPopupOpen, setCheckOutPopupOpen] = useState(false)
@@ -49,9 +49,12 @@ const Home = () => {
     const [selected, setSelected] = useState(null);
 
     // Handle Selection WFH & WFC
+
     const handleSelection = (option) => {
         setSelected((prev) => (prev === option ? null : option));
     };
+
+    // Date & Time
 
     const now = new Date();
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -63,44 +66,48 @@ const Home = () => {
     const formattedDate = `${dayOfWeek}, ${day} ${month} ${year}`;
     const currentTime = `${now.getHours()}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
 
+
+    // Fetch Attendance Data
     const fetchAttendance = async () => {
         try {
             const response = await axios.get('http://localhost:3015/getAttendance', { params: { id_user: 1 } });
             console.log("Fetched attendance data:", response.data);
-            setTableAttendance(response.data.data); 
+            setTableAttendance(response.data.data);
         } catch (error) {
             console.error('Error fetching attendance:', error);
         }
     }
 
-    // Render fetch Data
+    // Render Attendance Data
 
     useEffect(() => {
         fetchAttendance()
     }, [])
 
 
+    // Checkin Button
+
     const handleCheckIn = async () => {
         const newAttendance = {
-            id_user: 1, 
+            id_user: 1,
             date: formattedDate,
             check_in: currentTime,
-            check_out: null, 
+            check_out: null,
             status: selected || 'On-Site',
         };
-    
+
         console.log("Check-in payload:", newAttendance);
-    
+
         try {
             const response = await axios.post('http://localhost:3015/checkin', newAttendance);
             console.log("Response from server:", response.data);
-    
+
             // Add the new attendance
             setAttendance([...attendance, response.data]);
-    
+
             // Fetch data
             await fetchAttendance();
-    
+
             setisOpenCheck(false);
             setCheckInDisabled(true);
             setCheckOutDisabled(false);
@@ -109,25 +116,48 @@ const Home = () => {
         }
     };
 
+    // Checkout Button
 
-
-    const handleCheckOut = async (id_attendance) => {
+    const handleCheckOut = async () => {
         try {
             const check_out = currentTime;
-    
-            console.log("Check-out time:", check_out); 
-    
+
+            console.log("Check-out time:", check_out);
+
+            const id_attendance = attendance.length > 0 ? attendance[attendance.length - 1].id_attendance : null;
+
+            if (!id_attendance) {
+                console.error("No attendance record found for check-out");
+                return;
+            }
+
             const response = await axios.post('http://localhost:3015/checkout', { check_out, id_attendance });
-    
+
             if (response.status === 200) {
 
                 console.log("Check-out successful:", response.data);
+
+                await fetchAttendance();
+
+                // const now = new Date();
+                // const nextDay5AM = new Date(now);
+                // nextDay5AM.setDate(now.getDate() + 1);
+                // nextDay5AM.setHours(5, 0, 0, 0);
+
+                // const timeDifference = nextDay5AM - now;
+
+                setTimeout(() => {
+                    setCheckInDisabled(false);
+                }, 5000);
+
+                setCheckOutDisabled(true);
+
+                setCheckOutPopupOpen(false);
             }
         } catch (error) {
             console.error('Error during check-out:', error.response?.data || error.message);
         }
     };
-
 
 
     return (
@@ -160,9 +190,17 @@ const Home = () => {
 
             {CheckOutPopupOpen && (
                 <div className='inset-0 z-50 bg-black bg-opacity-30 fixed flex justify-center items-center'>
-                    <div className='bg-white w-full max-w-[500px] min-w-[200px] p-4 rounded-md'>
+                    <div className='bg-white w-full max-w-[500px] min-w-[200px] p-4 rounded-md FadeIn'>
                         <div className='flex justify-end'>
                             <button onClick={() => setCheckOutPopupOpen(false)} className='p-2 transition-all duration-300 rounded-md hover:bg-purple-500 hover:text-white'> <FaXmark /> </button>
+                        </div>
+                        <div>
+                            <h4>Check Out</h4>
+                            <p>Are you sure you want to check out?</p>
+                        </div>
+                        <div className='flex flex-row justify-end gap-4 mt-8'>
+                            <button onClick={() => setCheckOutPopupOpen(false)} className='p-4 rounded-md bg-gray-100 transition-all duration-300 hover:bg-gray-200'>Cancel</button>
+                            <button onClick={handleCheckOut} className='p-4 rounded-md bg-red-500 text-white transition-all duration-300 hover:bg-red-600'>Check Out</button>
                         </div>
                     </div>
                 </div>
@@ -175,7 +213,7 @@ const Home = () => {
                 <div className={`flex flex-col gap-8`}>
                     <CardCheckAttendance
                         onclickCheckIn={() => setisOpenCheck(true)}
-                        onclickCheckOut={handleCheckOut}
+                        onclickCheckOut={() => setCheckOutPopupOpen(true)}
                         disableCheckIn={isCheckInDisable}
                         disableCheckOut={isCheckOutDisable}
                     />
