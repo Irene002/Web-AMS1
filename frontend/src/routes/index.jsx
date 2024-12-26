@@ -19,7 +19,7 @@ const Routing = () => {
             <Route path="/" element={<LoginPage />} />
 
             {/* Protected routes */}
-            <Route element={<PrivateRoute />}> {/* Wrap protected routes */}
+            <Route element={<PrivateRoute />}>
                 <Route path="/Dashboard" element={<Dashboard />}>
                     <Route index element={<Home />} />
                     <Route path="Attendance" element={<Attendance />}>

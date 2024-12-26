@@ -255,7 +255,7 @@ const Home = () => {
                         </div>
 
                         {TableAttendance.length === 0 ? (
-                            <div className={`shadow-md rounded-md p-8 w-full max-w-full min-w-[500px] transition-all duration-500`}>
+                            <div className={`shadow-md rounded-md p-8 transition-all duration-500`}>
                                 No Records found this week.
                             </div>
                         ) : (

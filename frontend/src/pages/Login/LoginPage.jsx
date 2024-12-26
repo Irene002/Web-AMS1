@@ -57,6 +57,11 @@ const LoginPage = () => {
 
         } catch (error) {
             setError('Something went wrong, please try again.');
+
+            setTimeout(() => {
+                setError(false);
+            }, 10000);
+            
             setLoading(false);
         }
     }

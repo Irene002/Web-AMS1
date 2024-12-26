@@ -12,7 +12,7 @@ const CardData1 = [
         title:'Edit Profile',
         description:'The quick brown fox jumps over the lazy dog.',
         BtnLabel:'View Profile',
-        path:'Profile',
+        path:'Settings/Profile',
     },{
         icon:<FaGear/>,
         title:'Settings',

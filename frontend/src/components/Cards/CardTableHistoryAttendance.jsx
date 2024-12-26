@@ -12,9 +12,9 @@ const CardTableHistoryAttendance = ({ Date, CheckIn, CheckOut, Status }) => {
 
     return (
         <>
-            <div className={`shadow-md rounded-md p-8 w-full max-w-full min-w-[500px] transition-all duration-500`}>
+            <div className={`shadow-md bg-white rounded-md p-8 transition-all duration-500`}>
                 <div className={`flex flex-row justify-between items-center`}>
-                    <p>{Date}</p>
+                    <p className='MobileFontSize'>{Date}</p>
                     <button onClick={CollapseClick} className={`hover:bg-gray-100 rounded-full p-2 CollapseBtn ${isActive ? 'BtnRotated' : ''}`}>
                         <FaChevronDown />
                     </button>

@@ -280,16 +280,6 @@ nav{
     display: none;
   }
 
-  .Card1{
-    min-width: 500px;
-    max-width: 100%;
-  }
-
-  .CardAttendance{
-    min-width: 500px;
-    max-width: 100%;
-  }
-
   .Footer{
     margin: 0;
   }
@@ -356,6 +346,15 @@ nav{
   .Footer{
     display: none;
   }
+
+  .MobileFontSize{
+    font-size: .8rem;
+  }
+
+  .MobilePopLogout{
+    width: 350px;
+  }
+
 }
 
 .Section-Contents{
