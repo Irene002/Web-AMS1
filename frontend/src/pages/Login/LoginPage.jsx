@@ -19,8 +19,15 @@ const LoginPage = () => {
 
         if (!username || !password) {
             setError('Username and Password are required!');
+            
             setLoading(false);
+            
+            setTimeout(() => {
+                setError(false);
+            }, 10000);
+
             return;
+
         }
 
         try {
@@ -36,6 +43,11 @@ const LoginPage = () => {
             if (!response.ok) {
                 setError(data.message || 'Invalid Username or Password');
                 setLoading(false);
+                
+                setTimeout(() => {
+                    setError(false);
+                }, 10000);
+
                 return;
             }
 
@@ -72,7 +84,7 @@ const LoginPage = () => {
                                 {error && <p className={`text-red-500`}>{error}</p>}
                             </div>
                             <button type="submit" disabled={loading} className={`bg-purple-500 text-white p-4 rounded-lg ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}>
-                                {loading ? 'Loading...' : 'Login'}
+                                {loading ? 'Logging In...' : 'Login'}
                             </button>
                         </form>
                     </div>
