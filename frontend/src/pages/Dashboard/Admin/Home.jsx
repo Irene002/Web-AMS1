@@ -73,6 +73,8 @@ const Home = () => {
         }
     }
 
+    // Render fetch Data
+
     useEffect(() => {
         fetchAttendance()
     }, [])
